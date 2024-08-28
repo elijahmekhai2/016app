@@ -1,0 +1,12 @@
+{
+  "rooms": [
+    { "id": "Stu01", "name": "016StudioMain" },
+    { "id": "Stu02", "name": "016StudioGarage" }
+  ],
+  "bookings": [],
+  "eng": [
+    { "id": "EOTW", "name": "Aro", "roomId": "Stu01" },
+    { "id": "J53", "name": "Jay53", "roomId": "Stu01" },
+    { "id": "GG", "name": "Garrett", "roomId": "Stu02" }
+  ]
+}
