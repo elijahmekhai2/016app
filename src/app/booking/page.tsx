@@ -1,88 +1,14 @@
-import React, { useState } from "react";
+"use client";
+import BookingForm from "../components/bookingform";
+import Button from "../components/Button";
 
-const BookingForm = ({ onSave }: { onSave: (booking: Booking) => void }) => {
-  const [formData, setFormData] = useState<Booking>({
-    id: "",
-    roomId: "",
-    date: "",
-    checkInTime: "",
-    checkOutTime: "",
-    customerName: "",
-    email: "",
-    status: "pending",
-    engPack: false,
-    engId: null,
-  });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    onSave(formData);
-  };
-
+export default function Booking() {
   return (
-    <form onSubmit={handleSubmit}>
-      {/*       
-      <div>
-        <label htmlFor="">:</label>
-        <input type="" id="" name="" value={formData.roomId} onChange={handleChange} />
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-serif text-sm lg:flex">
+        <BookingForm isEng={false} />
+        <div></div>
       </div>
-      */}
-      <div>
-        <label htmlFor="roomId">Room ID:</label>
-        <input
-          type="text"
-          id="roomId"
-          name="roomId"
-          value={formData.roomId}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="checkInTime">Check In:</label>
-        <input
-          type="time"
-          id="checkInTime"
-          name="checkInTime"
-          value={formData.roomId}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="checkOutTime">Check Out:</label>
-        <input
-          type="time"
-          id="checkOutTime"
-          name="checkOutTime"
-          value={formData.roomId}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="customerName">Customer Name:</label>
-        <input
-          type="text"
-          id="customerName"
-          name="customerName"
-          value={formData.roomId}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">:</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          value={formData.roomId}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Save Booking</button>
-    </form>
+    </main>
   );
-};
+}
