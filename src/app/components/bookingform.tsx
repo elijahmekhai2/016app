@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 import { Booking } from "../components/bookinginterface";
 
 const BookingForm = ({ isEng }: { isEng: boolean }) => {
@@ -21,10 +22,16 @@ const BookingForm = ({ isEng }: { isEng: boolean }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  /*  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     alert(JSON.stringify(formData, null, 2));
     //  Get a database going for the form
+  }; */
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const serializedData = JSON.stringify(formData);
+    localStorage.setItem("bookingData", serializedData);
   };
 
   return (
