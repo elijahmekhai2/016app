@@ -10,8 +10,8 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Info", href: "/info", current: false },
+  { name: "Home", href: "/", current: false },
+  { name: "Info", href: "/info", current: true },
   { name: "Book", href: "/booking", current: false },
   { name: "Calendar", href: "#", current: false },
 ];
@@ -43,8 +43,8 @@ export default function Header() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="016 logo"
+                src="../components/016studios1.SVG"
                 className="h-8 w-auto"
               />
             </div>
